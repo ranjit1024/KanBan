@@ -2,8 +2,8 @@ const data = [
     {
         "columnId":0,
         "tasks":[
-            {"taksId":975522, "content":"Record Javascript Intro"},
-            {"taskid":7243, "content":"Record Kanban Project"}
+            {"taskId":975522, "content":"Record Javascript Intro"},
+            {"tasKid":7243, "content":"Record Kanban Project"}
         ]
     },
 

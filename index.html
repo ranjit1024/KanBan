@@ -10,6 +10,7 @@
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="toast/toast.css">
   </head>
 
   <body>
@@ -79,9 +80,10 @@
                   maxlength="30"
                 />
                 <button
-                  class="bi bi-plus-circle"
+                  class="bi bi-plus-circle toast-button"
                   data-id=""
                   name="submit"
+                  
                 ></button>
               </form>
             </div>
@@ -121,9 +123,10 @@
                   maxlength="30"
                 />
                 <button
-                  class="bi bi-plus-circle"
+                  class="bi bi-plus-circle toast-button"
                   data-id=""
                   name="submit"
+                 
                 ></button>
               </form>
             </div>
@@ -183,17 +186,26 @@
                   maxlength="30"
                 />
                 <button
-                  class="bi bi-plus-circle"
+                  class="bi bi-plus-circle toast-button"
                   data-id=""
                   name="submit"
+                  
                 ></button>
               </form>
             </div>
           </section>
+          
+          
+
         </div>
+      </div>
+
+      <div id="toastbox">
+        
       </div>
     </main>
 
     <script type="module" src="./index.js"></script>
+    <script src="toast/toast.js"></script>
   </body>
 </html>
