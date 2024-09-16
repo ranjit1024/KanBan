@@ -7,7 +7,7 @@ const taskBox = [todo, pending, complete];
 const addForm = document.querySelectorAll(".add");
 const error = document.querySelectorAll(".error");
 function addTaksCards(task, index) {
-  
+  console.log(task)
   const element = document.createElement("form");
   element.className = "card";
   element.draggable = true;
@@ -40,12 +40,14 @@ function addTaksCards(task, index) {
 
 Kanban.getAllTasks().forEach((tasks, index) => {
   tasks.forEach((task) => {
+    console.log(task)
     addTaksCards(task, index);
   });
 });
 
 addForm.forEach((form,index) =>{
   form.addEventListener("submit", (e)=>{
+    console.log(index)
     e.preventDefault();
     if(form.task.value){
       const task = Kanban.insertTask(index, form.task.value.trim())

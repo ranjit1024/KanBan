@@ -13,13 +13,12 @@ export default class Kanban {
 
   static insertTask(columnId, content) {
     const data = read();
+    
     const column = data.find(column => {
-        console.log(column.columnId == columnId)
+        console.log(column)
         return column.columnId == columnId;
     })
-    if(!data){
-        return [];
-    }
+    
 
     const task = {
         taskId : Math.floor(Math.random()*100000),
@@ -74,23 +73,25 @@ export default class Kanban {
     save(data)
   }
 
-  static getAllTasks() {
+  static getAllTasks(){
     const data = read();
     return [data[0].tasks, data[1].tasks, data[2].tasks];
   }
 }
 
+
 function read() {
   const data = localStorage.getItem("data");
   if (!data) {
     return [
-      { columnid: 0, tasks: [] },
+      { columnId: 0, tasks: [] },
       { columnId: 1, tasks: [] },
-      { columnId: 3, tasks: [] },
+      { columnId: 2, tasks: [] },
     ];
   }
   return JSON.parse(data);
 }
+
 function columnCount(){
   const data = read();
 
