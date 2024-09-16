@@ -3,7 +3,7 @@ const data = [
         "columnId":0,
         "tasks":[
             {"taskId":975522, "content":"Record Javascript Intro"},
-            {"tasKid":7243, "content":"Record Kanban Project"}
+            {"taskId":7243, "content":"Record Kanban Project"}
         ]
     },
 

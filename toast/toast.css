@@ -28,10 +28,9 @@
   align-items: center;
   border-radius:5px;
   color: black;
-  
-  position: relative;
+  position: fixed;
   transform: translateX(100%);
-  animation: moveleft 0.5s linear forwards;
+  animation: moveleft 0.2s linear forwards;
 
 }
 

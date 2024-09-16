@@ -14,6 +14,7 @@ export default class Kanban {
   static insertTask(columnId, content) {
     const data = read();
     const column = data.find(column => {
+        console.log(column.columnId == columnId)
         return column.columnId == columnId;
     })
     if(!data){
@@ -36,16 +37,19 @@ export default class Kanban {
     function findColumnTask(){
       for(const column of data){
         const task = column.tasks.find(item => {
-          return item.taskId === taskId;
+          return item.taskId == taskId;
         })
         if(task){
+          console.log(task)
           return [task,column];
         }
         
       }
     }
+    // console.log(findColumnTask())
     const[task, curretnColumn] = findColumnTask();
-    
+    console.log(findColumnTask())
+    console.log(task, curretnColumn)
     const targetColumn = data.find(column => {
       return column.columnId == updatedInformation.columnId;
     });
@@ -57,13 +61,15 @@ export default class Kanban {
     save(data);
 }
 
-  static deleteTaks(taskId) {
+  static deleteTaks(taskId, columnId) {
     const data = read();
     for(const column of data){
-      const task = column.tasks.find(item => {
+      const task = column.tasks.find(item =>{
         return item.taskId == taskId;
       })
-      column.tasks.splice(column.tasks.indexOf(task), 1);
+      if(task){
+        column.tasks.splice(column.tasks.indexOf(task),1)
+      }
     }
     save(data)
   }
@@ -85,7 +91,22 @@ function read() {
   }
   return JSON.parse(data);
 }
+function columnCount(){
+  const data = read();
+
+  const todo = document.querySelector("span.todo");
+  todo.textContent = data[0].tasks.length;
+
+  const pending = document.querySelector("span.pending");
+  pending.textContent = data[1].tasks.length;
+  
+
+  const completed = document.querySelector("span.completed");
+  completed.textContent = data[2].tasks.length;
+}
 
 function save(data){
   localStorage.setItem("data", JSON.stringify(data));
+  columnCount();
 }
+columnCount();

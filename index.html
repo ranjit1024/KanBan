@@ -10,7 +10,7 @@
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="toast/toast.css">
+    <link rel="stylesheet" href="toast/toast.css" />
   </head>
 
   <body>
@@ -30,46 +30,35 @@
                 <span class="todo">2</span>
               </div>
               <div class="cards todo">
-                <form class="card">
-                  <input
-                    value="Record JavaScript Preview"
-                    type="text"
-                    name="task"
-                    autocomplete="off"
-                    disabled="disabled"
-                  />
-                  <div>
-                    <span class="task-id">#97522</span>
-                    <span>
-                      <button class="bi bi-pencil edit" data-id=""></button>
-                      <button
-                        class="bi bi-check-lg update hide"
-                        data-id=""
-                      ></button>
-                      <button class="bi bi-trash3 delete" data-id=""></button>
-                    </span>
-                  </div>
-                </form>
-                <form class="card">
-                  <input
-                    value="Record Kanban Project"
-                    type="text"
-                    name="task"
-                    autocomplete="off"
-                    disabled="disabled"
-                  />
-                  <div>
-                    <span class="task-id">#7243</span>
-                    <span>
-                      <button class="bi bi-pencil edit" data-id=""></button>
-                      <button
-                        class="bi bi-check-lg update hide"
-                        data-id=""
-                      ></button>
-                      <button class="bi bi-trash3 delete" data-id=""></button>
-                    </span>
-                  </div>
-                </form>
+               
+              </div>
+
+              <form class="add">
+                <input
+                  type="text"
+                  name="task"
+                  placeholder="New Task"
+                  autocomplete="off"
+                  maxlength="30"
+                />
+                <button
+                  class="bi bi-plus-circle toast-button"
+                  data-id="0"
+                  name="submit"
+                ></button>
+              </form>
+              <div class="error hide">
+                <p class="empty">Plese Enter a value</p>
+              </div>
+            </div>
+
+            <div class="taskbox">
+              <div class="title">
+                <p>IN PROGRESS</p>
+                <span class="pending">3</span>
+              </div>
+              <div class="cards pending">
+                
               </div>
               <form class="add">
                 <input
@@ -81,101 +70,23 @@
                 />
                 <button
                   class="bi bi-plus-circle toast-button"
-                  data-id=""
+                  data-id="1"
                   name="submit"
-                  
                 ></button>
+                
               </form>
-            </div>
-            <div class="taskbox">
-              <div class="title">
-                <p>IN PROGRESS</p>
-                <span class="pending">1</span>
+              <div class="error hide">
+                <p class="empty">Plese Enter a value</p>
               </div>
-              <div class="cards pending">
-                <form class="card">
-                  <input
-                    value="System Design Notes"
-                    type="text"
-                    name="task"
-                    autocomplete="off"
-                    disabled="disabled"
-                  />
-                  <div>
-                    <span class="task-id">#38833</span>
-                    <span>
-                      <button class="bi bi-pencil edit" data-id=""></button>
-                      <button
-                        class="bi bi-check-lg update hide"
-                        data-id=""
-                      ></button>
-                      <button class="bi bi-trash3 delete" data-id=""></button>
-                    </span>
-                  </div>
-                </form>
-              </div>
-              <form class="add" >
-                <input
-                  type="text"
-                  name="task"
-                  placeholder="New Task"
-                  autocomplete="off"
-                  maxlength="30"
-                />
-                <button
-                  class="bi bi-plus-circle toast-button"
-                  data-id=""
-                  name="submit"
-                 
-                ></button>
-              </form>
             </div>
+
             <div class="taskbox">
               <div class="title">
                 <p>COMPLETED</p>
                 <span class="completed">2</span>
               </div>
               <div class="cards completed">
-                <form class="card">
-                  <input
-                    value="React Projects"
-                    type="text"
-                    name="task"
-                    autocomplete="off"
-                    disabled="disabled"
-                  />
-                  <div>
-                    <span class="task-id">#88198</span>
-                    <span>
-                      <button class="bi bi-pencil edit" data-id=""></button>
-                      <button
-                        class="bi bi-check-lg update hide"
-                        data-id=""
-                      ></button>
-                      <button class="bi bi-trash3 delete" data-id=""></button>
-                    </span>
-                  </div>
-                </form>
-                <form class="card" >
-                  <input
-                    value="Edit OOPS Lectures"
-                    type="text"
-                    name="task"
-                    autocomplete="off"
-                    disabled="disabled"
-                  />
-                  <div>
-                    <span class="task-id">#23030</span>
-                    <span>
-                      <button class="bi bi-pencil edit" data-id=""></button>
-                      <button
-                        class="bi bi-check-lg update hide"
-                        data-id=""
-                      ></button>
-                      <button class="bi bi-trash3 delete" data-id=""></button>
-                    </span>
-                  </div>
-                </form>
+                
               </div>
               <form class="add">
                 <input
@@ -187,22 +98,20 @@
                 />
                 <button
                   class="bi bi-plus-circle toast-button"
-                  data-id=""
+                  data-id="3"
                   name="submit"
-                  
                 ></button>
               </form>
+              <div class="error hide">
+                <p class="empty">Plese Enter a value</p>
+              </div>
+              </div>
             </div>
           </section>
-          
-          
-
         </div>
       </div>
 
-      <div id="toastbox">
-        
-      </div>
+      <div id="toastbox"></div>
     </main>
 
     <script type="module" src="./index.js"></script>
