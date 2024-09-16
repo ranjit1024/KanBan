@@ -12,6 +12,7 @@ function addTaksCards(task, index) {
   element.className = "card";
   element.draggable = true;
   element.dataset.id = task.taskId;
+  element.draggable = true;
   element.innerHTML = `
   <input
                     value="${task.content}"
@@ -85,6 +86,31 @@ taskBox.forEach(columns =>{
       e.preventDefault()
       Kanban.deleteTaks(e.target.dataset.id, e.target.dataset.column)
       formInput.parentElement.remove();
+    }
+  })
+
+  columns.addEventListener("dragstart", (e)=>{
+    if(e.target.classList.contains("card")){
+      e.target.classList.add("dragging")
+    }
+  });
+
+  columns.addEventListener("dragover", (e)=>{
+    const card = document.querySelector(".dragging");
+    columns.appendChild(card);
+  })
+
+  columns.addEventListener("dragend", (e)=>{
+    if(e.target.classList.contains("card")){
+      e.target.classList.remove("dragging");
+
+      const taskId = e.target.dataset.id;
+      const columnId = e.target.parentElement.dataset.id;
+      const content = e.target.task.value;
+      Kanban.updataTask(taskId, {
+        columnId:columnId,
+        content:content
+      })
     }
   })
 })
